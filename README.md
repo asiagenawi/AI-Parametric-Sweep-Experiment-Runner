@@ -8,7 +8,7 @@ A multi-agent AI system that orchestrates end-to-end parametric sweep experiment
 1. Clone and navigate to the repository:
 ```bash
 git clone <repository-url>
-cd Experiment
+cd ASPER
 ```
 
 2. Create and activate a virtual environment:
