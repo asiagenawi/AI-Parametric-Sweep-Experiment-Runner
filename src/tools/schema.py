@@ -58,7 +58,7 @@ class ObjectiveTarget(BaseModel):
 
 
 class Objective(BaseModel):
-    type: Literal["single", "multi"] = "single"
+    type: Literal["single", "multi", "none"] = "single"
     aggregate: Literal["weighted_sum", "pareto", "lexicographic"] = "weighted_sum"
     targets: List[ObjectiveTarget] = Field(default_factory=list)
 
