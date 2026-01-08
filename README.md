@@ -1,10 +1,10 @@
-# Experiment Manager
+# Apser
 
 An AI-powered experiment management system designed to streamline scientific computing workflows and manage complex experiments with intelligent automation.
 
 ## Overview
 
-Experiment Manager is a Python-based framework that combines the power of AI agents with Jupyter notebooks to create a seamless experiment management experience. The system leverages LangChain and OpenAI to provide intelligent assistance throughout the experimental workflow.
+Apser is a Python-based framework that combines the power of AI agents with Jupyter notebooks to create a seamless experiment management experience. The system leverages LangChain and OpenAI to provide intelligent assistance throughout the experimental workflow.
 
 ## Features
 
@@ -26,7 +26,7 @@ Experiment Manager is a Python-based framework that combines the power of AI age
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd Experiment
+cd apser
 ```
 
 2. Create a virtual environment (recommended):
@@ -68,14 +68,10 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ### Command-Line Interface
 
-The package provides two CLI entry points:
+The package provides a CLI entry point:
 
 ```bash
-# Using the full name
-experiment-manager [options]
-
-# Using the short alias
-experiment [options]
+apser [options]
 ```
 
 ### Python API
@@ -117,7 +113,7 @@ schema.validate(event_data)
 ## Project Structure
 
 ```
-Experiment/
+apser/
 ├── README.md
 ├── pyproject.toml          # Project configuration and dependencies
 ├── schema.py               # Event schema validation
