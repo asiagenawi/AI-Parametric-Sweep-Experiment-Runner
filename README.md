@@ -26,7 +26,7 @@ Apser is a Python-based framework that combines the power of AI agents with Jupy
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd apser
+cd Experiment
 ```
 
 2. Create a virtual environment (recommended):
@@ -71,6 +71,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 The package provides a CLI entry point:
 
 ```bash
+# Using the command
 apser [options]
 ```
 
@@ -113,7 +114,7 @@ schema.validate(event_data)
 ## Project Structure
 
 ```
-apser/
+Experiment/
 ├── README.md
 ├── pyproject.toml          # Project configuration and dependencies
 ├── schema.py               # Event schema validation
