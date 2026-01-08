@@ -1,4 +1,4 @@
-# APSER
+# APSER: AI Parameteric Sensitivity Sweep Experiment Runner
 A multi-agent AI system that orchestrates end-to-end parametric sweep experiments: converts natural language into structured specifications, performs automated research, generates and executes code, creates visualizations, and produces comprehensive reports.
 
 ## Setup
