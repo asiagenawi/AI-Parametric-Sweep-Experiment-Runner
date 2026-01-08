@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Experiment Management System - Main Script
-"""
+
 import asyncio
 import json
 from pathlib import Path
@@ -16,8 +14,6 @@ from tools.fileReader import read_file_tool
 
 
 async def main():
-    """Main workflow for experiment management."""
-    # Setup
     load_dotenv()
     llm = ChatOpenAI(model="gpt-5.2", temperature=0)
 
