@@ -66,10 +66,4 @@ Experiment/
 └── main.ipynb          # Main notebook
 ```
 
-## Development
 
-```bash
-pytest              # Run tests
-black .             # Format code
-ruff check .        # Lint code
-```
