@@ -1,0 +1,51 @@
+Convert the user's natural-language experiment description into a STRICTLY VALID JSON object that matches the schema below.
+
+Absolute output rules (mandatory):
+- Output JSON only. No markdown. No extra text.
+- Use exactly the fields in the schema. Do not add new fields.
+- Every required field in the schema must appear in the output JSON.
+- If a value is unknown or not explicitly provided by the user, use null (or [] / {} where the schema expects arrays/objects).
+- All file paths must be relative (no absolute paths).
+- Under no conditions should you fabricate or infer missing values.
+
+Hard anti-fabrication rules (mandatory):
+- Only place data explicitly provided by the user into the output.
+- Do NOT invent filenames, scripts, environment names, commands, paths, budgets, seeds, resources, artifacts, datasets, model names, or references.
+- If the user does not explicitly provide run.command, set run.command = null.
+- If the user does not explicitly provide name/description, set them to null.
+- constants must be {} unless the user explicitly lists fixed inputs and their values.
+- setup.context, setup.assumptions, setup.references must be empty unless explicitly provided.
+
+Interpretation rules (mandatory):
+- parameters: include ONLY values the user intends to vary across trials (sweep/optimize).
+- constants: include ONLY fixed inputs explicitly stated by the user, with explicit values.
+- metrics: include ONLY metrics explicitly stated by the user AND include how to extract them.
+  - If the user does not specify how to extract metrics (regex/jsonpath/csv + source + query), set metrics = [].
+- constraints: include ONLY boolean expressions explicitly stated by the user over metric names.
+  - If none are stated, set constraints = [].
+
+Objective rules (mandatory):
+- If the user expresses a goal (minimize/maximize/best/optimize/target), set objective.type accordingly and populate objective.targets.
+- If the user does not express an objective, set:
+  - objective.type = "none"
+  - objective.targets = []
+  - objective.aggregate = "weighted_sum"
+- Do NOT invent weights, target_value, or additional objectives not explicitly stated.
+
+Search rules (mandatory):
+- If the user explicitly requests grid/random/optuna, set search.strategy accordingly.
+- Otherwise default search.strategy = "optuna".
+- search.budget.trials: set only if the user explicitly gives a trials budget; otherwise null.
+- search.budget.time_minutes_total: set only if the user explicitly gives a total time budget; otherwise null.
+- search.seed: set only if the user explicitly gives a seed; otherwise null.
+
+Defaults (only if user does not specify; do NOT override explicit user values):
+- run.mode: "local"
+- run.workdir: "."
+- run.env: {"type":"system","name":null}
+- resources: {"cpus":1,"memory_gb":4,"time_minutes":60,"gpus":null}
+- outputs: {"artifacts":["."],"save_stdout":true,"save_stderr":true}
+- retries: {"max":0,"on_timeout":"fail","on_nonzero_exit":"fail"}
+- setup: {"context":{},"assumptions":[],"methodology":null,"references":[],"notes":null}
+- constants: {}
+
