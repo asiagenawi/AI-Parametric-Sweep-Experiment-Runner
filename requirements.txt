@@ -1,0 +1,30 @@
+# Core dependencies
+langchain-openai
+langchain-core
+openai
+python-dotenv
+pydantic>=2.0
+pydantic-settings
+
+# OpenAI Agent SDK
+agents
+openai-agents
+
+# Jupyter and notebook support
+jupyter
+nbconvert
+ipython
+
+# Async support
+aiohttp
+
+# Common utilities
+requests
+typing-extensions
+
+# Plotting and data visualization
+matplotlib
+seaborn
+pandas
+numpy
+plotly
