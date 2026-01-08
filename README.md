@@ -18,11 +18,6 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Install the package:
-```bash
-pip install -e .
-```
-
 ## Configuration
 
 Create a `.env` file in the project root:
