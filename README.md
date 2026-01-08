@@ -1,6 +1,5 @@
 # Apser
-
-An AI-powered experiment management system for scientific computing workflows using LangChain, OpenAI, and Jupyter notebooks.
+A multi-agent AI system that orchestrates end-to-end parametric sweep experiments: converts natural language into structured specifications, performs automated research, generates and executes code, creates visualizations, and produces comprehensive reports.
 
 ## Setup
 
